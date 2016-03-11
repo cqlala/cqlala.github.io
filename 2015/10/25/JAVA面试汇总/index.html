@@ -1,0 +1,757 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="立即行动，期望全栈" />
+
+
+
+  <meta name="keywords" content="java,面试," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="本着查漏补缺，也为了找一份高薪职业，今年陆陆续续参加了一些面试，有互联网巨头、传统的软件行业，亦有创业公司还有小型互联网公司，期间也拿到了一些offer，但是脑子被驴踢了没有去～现在总结一下关于java面试的一些面试问题。找了很久，找到一个前辈总结的面试精华传统IT转互联网面试经验分享。同时，强烈推荐海子- Java并发编程。先写一下今天遇到的一道算法面试题，题目如下：给定一个存放整数的数组，重新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA面试汇总">
+<meta property="og:url" content="http://truechuan.github.io/2015/10/25/JAVA面试汇总/index.html">
+<meta property="og:site_name" content="陈川点滴">
+<meta property="og:description" content="本着查漏补缺，也为了找一份高薪职业，今年陆陆续续参加了一些面试，有互联网巨头、传统的软件行业，亦有创业公司还有小型互联网公司，期间也拿到了一些offer，但是脑子被驴踢了没有去～现在总结一下关于java面试的一些面试问题。找了很久，找到一个前辈总结的面试精华传统IT转互联网面试经验分享。同时，强烈推荐海子- Java并发编程。先写一下今天遇到的一道算法面试题，题目如下：给定一个存放整数的数组，重新">
+<meta property="og:updated_time" content="2015-11-12T16:24:37.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA面试汇总">
+<meta name="twitter:description" content="本着查漏补缺，也为了找一份高薪职业，今年陆陆续续参加了一些面试，有互联网巨头、传统的软件行业，亦有创业公司还有小型互联网公司，期间也拿到了一些offer，但是脑子被驴踢了没有去～现在总结一下关于java面试的一些面试问题。找了很久，找到一个前辈总结的面试精华传统IT转互联网面试经验分享。同时，强烈推荐海子- Java并发编程。先写一下今天遇到的一道算法面试题，题目如下：给定一个存放整数的数组，重新">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> JAVA面试汇总 | 陈川点滴 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">陈川点滴</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'VVBUs-R5notiZ7nfC9xj','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              JAVA面试汇总
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-25T22:21:50+08:00" content="2015-10-25">
+            2015-10-25
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/10/25/JAVA面试汇总/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/25/JAVA面试汇总/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>本着查漏补缺，也为了找一份高薪职业，今年陆陆续续参加了一些面试，有互联网巨头、传统的软件行业，亦有创业公司还有小型互联网公司，期间也拿到了一些offer，但是脑子被驴踢了没有去～现在总结一下关于java面试的一些面试问题。<br>找了很久，找到一个前辈总结的面试精华<a href="http://card.weibo.com/article/h5/s?plg_nld=1&amp;plg_auth=1&amp;plg_nld=1&amp;plg_dev=1&amp;plg_uin=1&amp;plg_usr=1&amp;plg_vkey=1&amp;plg_nld=1&amp;plg_uin=1&amp;plg_nld=1&amp;plg_auth=1&amp;plg_usr=1&amp;plg_vkey=1&amp;plg_dev=1#cid=1001603859815192504915&amp;vid&amp;extparam&amp;from&amp;wm=0&amp;ip=61.50.141.0&amp;appinstall=0" target="_blank" rel="external">传统IT转互联网面试经验分享</a>。同时，强烈推荐<a href="http://www.cnblogs.com/dolphin0520/category/602384.html" target="_blank" rel="external">海子- Java并发编程</a>。<br>先写一下今天遇到的一道算法面试题，题目如下：<br><strong>给定一个存放整数的数组，重新排列数组使得数组左边为奇数，右边为偶数。要求：空间复杂度O(1)，时间复杂度为O（n）</strong><br>伪代码如下，左右开弓，完美解决～：</p>
+<pre><code><span class="keyword">m</span> = 0
+<span class="keyword">n</span>= 1en-1  
+<span class="keyword">while</span> i&lt; len-1 &amp;&amp; <span class="keyword">m</span> &lt;= <span class="keyword">n</span>:
+    <span class="keyword">if</span> array[<span class="keyword">m</span>] 偶数 &amp;&amp;  array[<span class="keyword">n</span>] 偶数:
+        <span class="keyword">n</span> = len-1-<span class="literal">i</span>
+    <span class="keyword">else</span>  <span class="keyword">if</span> array[<span class="keyword">m</span>] 奇数 &amp;&amp; array[<span class="keyword">n</span>] 奇数：
+        <span class="keyword">m</span> = i+1
+    <span class="keyword">else</span> <span class="keyword">if</span> <span class="keyword">m</span> 奇数 &amp;&amp; <span class="keyword">n</span>偶数：
+        i++
+        <span class="keyword">m</span> = <span class="literal">i</span>
+        <span class="keyword">n</span> = array[len-1-i]
+    <span class="keyword">else</span> <span class="keyword">if</span> <span class="keyword">m</span> 偶数 &amp;&amp;  <span class="keyword">n</span> 奇数:
+        exchange array[<span class="keyword">m</span>] array[<span class="keyword">n</span>]
+        i++
+        <span class="keyword">m</span> = <span class="literal">i</span>
+        <span class="keyword">n</span>  = array[len-1-i]  
+</code></pre><h2 id="java关键字">java关键字</h2><h3 id="作用域关键字">作用域关键字</h3><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>类内部</th>
+<th>本包</th>
+<th>子类</th>
+<th>外部包</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>protectedl-scale</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+<tr>
+<td>default</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>private</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×  </td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>对于public修饰符，它具有最大的访问权限，可以访问任何一个在CLASSPATH下的类、接口、异常等。它往往用于对外的情况，也就是对象或类对外的一种接口的形式。  </li>
+<li>对于protected修饰符，它主要的作用就是用来保护子类的。它的含义在于子类可以用它修饰的成员，其他的不可以，它相当于传递给子类的一种继承的东西。  </li>
+<li>对于default来说，有点的时候也成为friendly（友员），它是针对本包访问而设计的，任何处于本包下的类、接口、异常等，都可以相互访问，即使是父类没有用protected修饰的成员也可以。</li>
+<li>对于private来说，它的访问权限仅限于类的内部，是一种封装的体现，例如，大多数的成员变量都是修饰符为private的，它们不希望被其他任何外部的类访问。  </li>
+</ul>
+<p><strong>注意：Java的访问控制是停留在编译层的，也就是它不会在.class文件中留下任何的痕迹，只在编译的时候进行访问控制的检查。其实，通过反射的手段，是可以访问任何包下任何类中的成员，例如，访问类的私有成员也是可能的。从中可以扩展两个标题，即<a href="http://blog.csdn.net/zhengzhb/article/details/7517213" target="_blank" rel="external">java的生命周期</a>，<a href="">java类反射</a>。</strong><br>区别  </p>
+<ol>
+<li>public：可以被所有其他类所访问。</li>
+<li>private：只能被自己访问和修改。</li>
+<li>protected：自身，子类及同一个包中类可以访问。</li>
+<li>default（默认）：同一包中的类可以访问，声明时没有加修饰符，认为是friendly。  </li>
+</ol>
+<h3 id="static|final关键字">static|final关键字</h3><ul>
+<li>static可以用来修饰类的成员方法、类的成员变量，另外可以编写static代码块来优化程序性能，不需要依赖于对象来进行访问，只要类被加载了，就可以通过类名去进行访问。<a href="http://www.cnblogs.com/dolphin0520/p/3799052.html" target="_blank" rel="external">Java中的static关键字解析</a></li>
+<li>final关键字可以用来修饰类、方法和变量（包括成员变量和局部变量）。<br>当用final修饰一个类时，表明这个类不能被继承。String的定义  <pre><code class="java"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span> </span>{}
+</code></pre>
+String的值是可改变的，其实是String的地址是没有改变，但是指针的位置发生改变。<a href="http://www.importnew.com/17034.html" target="_blank" rel="external">初探Java字符串</a>。</li>
+<li><p>final修饰变量，如果是基本数据类型的变量，则其数值一旦在初始化之后便不能更改；如果是引用类型的变量，则在对其初始化之后便不能再让其指向另一个对象。<a href="http://www.cnblogs.com/dolphin0520/p/3736238.html" target="_blank" rel="external">浅析Java中的final关键字</a></p>
+<h3 id="synchronized|volatile关键字">synchronized|volatile关键字</h3></li>
+<li><p>synchronized用来修饰一个方法或者一个代码块的时候，能够保证在同一时刻最多只有一个线程执行该段代码。<a href="http://www.cnblogs.com/dolphin0520/p/3923737.html" target="_blank" rel="external">Java并发编程：synchronized</a>   </p>
+</li>
+</ul>
+<p>注意</p>
+<ol>
+<li>当一个线程正在访问一个对象的synchronized方法，那么其他线程不能访问该对象的其他synchronized方法。这个原因很简单，因为一个对象只有一把锁，当一个线程获取了该对象的锁之后，其他线程无法获取该对象的锁，所以无法访问该对象的其他synchronized方法。  </li>
+<li>当一个线程正在访问一个对象的synchronized方法，那么其他线程能访问该对象的非synchronized方法。这个原因很简单，访问非synchronized方法不需要获得该对象的锁，假如一个方法没用synchronized关键字修饰，说明它不会使用到临界资源，那么其他线程是可以访问这个方法的。</li>
+<li>如果一个线程A需要访问对象object1的synchronized方法fun1，另外一个线程B需要访问对象object2的synchronized方法fun1，即使object1和object2是同一类型），也不会产生线程安全问题，因为他们访问的是不同的对象，所以不存在互斥问题。</li>
+<li>并且如果一个线程执行一个对象的非static synchronized方法，另外一个线程需要执行这个对象所属类的static synchronized方法，此时不会发生互斥现象，因为访问static synchronized方法占用的是类锁，而访问非static synchronized方法占用的是对象锁，所以不存在互斥现象。 </li>
+</ol>
+<ul>
+<li>volatile关键字是与Java的内存模型有关。编译器为了加快程序运行的速度,对一些变量的写操作会先在寄存器或者是CPU缓存上进行,最后才写入内存.而在这个过程,变量的新值对其他线程是不可见的.而volatile的作用就是使它修饰的变量的读写操作都必须在内存中进行。<a href="http://www.cnblogs.com/dolphin0520/p/3920373.html" target="_blank" rel="external">Java并发编程：volatile关键字解析</a></li>
+<li>volatile与synchronized  </li>
+</ul>
+<ol>
+<li>volatile本质是在告诉jvm当前变量在寄存器中的值是不确定的,需要从主存中读取,synchronized则是锁定当前变量,只有当前线程可以访问该变量,其他线程被阻塞住.</li>
+<li>volatile仅能使用在变量级别,synchronized则可以使用在变量,方法.</li>
+<li>volatile仅能实现变量的修改可见性,但不具备原子特性,而synchronized则可以保证变量的修改可见性和原子性.</li>
+<li>volatile不会造成线程的阻塞,而synchronized可能会造成线程的阻塞.</li>
+<li>volatile标记的变量不会被编译器优化,而synchronized标记的变量可以被编译器优化.<h2 id="java对象">java对象</h2><h2 id="java数据结构">java数据结构</h2><h2 id="java多线程">java多线程</h2></li>
+</ol>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/面试/" rel="tag">#面试</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/03/基于多个实例的redis连接池/" rel="prev">基于多个实例的redis连接池</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/23/hello-world/" rel="next">Hello World</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/10/25/JAVA面试汇总/"
+     data-title="JAVA面试汇总"
+     data-content=""
+     data-url="http://truechuan.github.io/2015/10/25/JAVA面试汇总/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/10/25/JAVA面试汇总/"
+                   data-title="JAVA面试汇总" data-url="http://truechuan.github.io/2015/10/25/JAVA面试汇总/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://7xnujk.com1.z0.glb.clouddn.com/chuan.JPG" alt="陈川" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">陈川</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">立即行动，期望全栈</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/truechuan" target="_blank">GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/chen-chuan-89" target="_blank">Zhihu</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#java关键字"><span class="nav-number">1.</span> <span class="nav-text">java关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域关键字"><span class="nav-number">1.1.</span> <span class="nav-text">作用域关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static|final关键字"><span class="nav-number">1.2.</span> <span class="nav-text">static|final关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized|volatile关键字"><span class="nav-number">1.3.</span> <span class="nav-text">synchronized|volatile关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java对象"><span class="nav-number">2.</span> <span class="nav-text">java对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java数据结构"><span class="nav-number">3.</span> <span class="nav-text">java数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java多线程"><span class="nav-number">4.</span> <span class="nav-text">java多线程</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈川</span>
+  <span id="busuanzi_container_site_pv" style="display: none;">
+  您是本站第 <span style="color:#222" font="" id="busuanzi_value_site_pv"></span>位访问者
+  </span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"truechuan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
